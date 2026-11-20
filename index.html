@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090d">
+<meta name="description" content="Apeiron 2.0 AI Developer Assistant">
+
+<title>Apeiron 2.0 | Developer Command Center</title>
+
+<style>
+
+/* =================================
+   APEIRON 2.0
+   SECTION 1: FOUNDATION
+================================= */
+
+:root {
+  --background: #08090d;
+  --panel: #11141c;
+  --panel2: #171b25;
+  --border: #292e3a;
+  --text: #f4f5f8;
+  --muted: #929baa;
+  --accent: #a5b4fc;
+  --green: #5ee6a8;
+  --red: #ff6b78;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 245px;
+  flex-shrink: 0;
+  background: #0d1016;
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #626c83;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-name {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo-version {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.nav-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #b4bdcc;
+  text-align: left;
+  padding: 12px;
+  border-radius: 9px;
+  margin-bottom: 4px;
+  transition: 0.2s;
+}
+
+.nav-button:hover {
+  background: var(--panel2);
+  color: white;
+}
+
+.nav-button.active {
+  background: #202638;
+  border-color: #39445f;
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding: 15px 8px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* MAIN CONTENT */
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  height: 65px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  background: #0b0d12;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+.content {
+  max-width: 1250px;
+  margin: auto;
+  padding: 28px;
+}
+
+.page {
+  display: none;
+  animation: appear 0.2s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DASHBOARD COMPONENTS */
+
+.welcome {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      #252d49 0,
+      transparent 40%
+    ),
+    #11141c;
+  margin-bottom: 22px;
+}
+
+.welcome h1 {
+  font-size: clamp(25px, 5vw, 38px);
+  margin: 10px 0;
+}
+
+.welcome p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 19px;
+  min-width: 0;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.card-icon {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 21px;
+  margin: 25px 0 15px;
+}
+
+/* BUTTONS */
+
+.btn {
+  background: #252d42;
+  color: white;
+  border: 1px solid #414c68;
+  border-radius: 8px;
+  padding: 11px 15px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #34415f;
+}
+
+.btn-primary {
+  background: #6476b5;
+  border-color: #8496d7;
+}
+
+.btn-primary:hover {
+  background: #788bcb;
+}
+
+.btn-secondary {
+  background: var(--panel2);
+  border-color: var(--border);
+}
+
+.btn-danger {
+  background: #351b23;
+  border-color: #783a49;
+}
+
+/* INPUTS */
+
+.field {
+  width: 100%;
+  background: #0b0e14;
+  border: 1px solid var(--border);
+  color: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 7px 0 15px;
+}
+
+textarea.field {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.field-label {
+  display: block;
+  color: #c5ccda;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* COMMAND AND CHAT AREAS */
+
+.command-output {
+  background: #080b10;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 15px;
+  min-height: 100px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--green);
+  line-height: 1.6;
+}
+
+.chat-messages {
+  height: 350px;
+  overflow-y: auto;
+  background: #090c11;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 9px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.message.user {
+  background: #202a40;
+  margin-left: 12%;
+}
+
+.message.assistant {
+  background: #171c26;
+  margin-right: 12%;
+}
+
+/* MOBILE SUPPORT */
+
+.mobile-toggle {
+  display: none;
+}
+
+@media(max-width: 760px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    z-index: 30;
+    transition: left 0.2s;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .mobile-toggle {
+    display: inline-block;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding: 0 15px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+<div class="logo-icon">A</div>
+<div>
+<div class="logo-name">APEIRON</div>
+<div class="logo-version">DEVELOPER ASSISTANT 2.0</div>
+</div>
+</div>
+
+<div class="nav-label">MAIN SYSTEM</div>
+
+<button class="nav-button active" onclick="navigate('dashboard')">◈ Dashboard</button>
+<button class="nav-button" onclick="navigate('commands')">⌘ Commands</button>
+<button class="nav-button" onclick="navigate('chat')">◉ AI Assistant</button>
+
+<div class="nav-label">DEVELOPMENT</div>
+
+<button class="nav-button" onclick="navigate('code')">⌨ Code Lab</button>
+<button class="nav-button" onclick="navigate('tools')">⚙ Developer Tools</button>
+<button class="nav-button" onclick="navigate('debug')">◇ Debugging</button>
+<button class="nav-button" onclick="navigate('architecture')">▦ Architecture</button>
+
+<div class="nav-label">SECURITY & QUALITY</div>
+
+<button class="nav-button" onclick="navigate('security')">⛨ Security Center</button>
+<button class="nav-button" onclick="navigate('testing')">✓ Testing Center</button>
+
+<div class="nav-label">PROJECTS</div>
+
+<button class="nav-button" onclick="navigate('projects')">▣ Project Builder</button>
+<button class="nav-button" onclick="navigate('docs')">▤ Documentation</button>
+
+<div class="nav-label">SYSTEM</div>
+
+<button class="nav-button" onclick="navigate('settings')">⚙ Settings</button>
+<button class="nav-button" onclick="navigate('about')">ⓘ About Apeiron</button>
+
+<div class="sidebar-footer">
+APEIRON 2.0<br>
+BUILD. CREATE. EVOLVE.<br>
+● Interface ready
+</div>
+
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<button class="btn mobile-toggle" onclick="toggleSidebar()">☰</button>
+<div class="topbar-title" id="page-title">Dashboard</div>
+<div class="status">
+<span class="status-dot"></span>
+READY
+</div>
+</header>
+
+<div class="content">
+
+<!-- SECTION 2B: DASHBOARD -->
+
+<section class="page active" id="dashboard">
+
+<div class="welcome">
+<div class="eyebrow">APEIRON DEVELOPMENT SYSTEM</div>
+<h1>Welcome, Anonymous.</h1>
+<p>Your developer command center is ready.</p>
+
+<button class="btn btn-primary"
+onclick="navigate('chat')">
+Open AI Assistant
+</button>
+
+<button class="btn"
+onclick="navigate('code')">
+Open Code Lab
+</button>
+</div>
+
+<h2 class="section-title">System Overview</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">◈</div>
+<h3>Version</h3>
+<p>Apeiron 2.0</p>
+</div>
+
+<div class="card">
+<div class="card-icon">◉</div>
+<h3>AI Connection</h3>
+<p id="ai-status">Not configured</p>
+</div>
+
+<div class="card">
+<div class="card-icon">⌨</div>
+<h3>Code Lab</h3>
+<p>Available</p>
+</div>
+
+<div class="card">
+<div class="card-icon">✓</div>
+<h3>Interface</h3>
+<p>Loaded</p>
+</div>
+
+</div>
+
+<h2 class="section-title">Quick Access</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Code Generator</h3>
+<p>Create software and scripts.</p>
+<button class="btn" onclick="navigate('code')">Open</button>
+</div>
+
+<div class="card">
+<h3>Bug Analyzer</h3>
+<p>Investigate programming errors.</p>
+<button class="btn" onclick="navigate('debug')">Open</button>
+</div>
+
+<div class="card">
+<h3>Architecture</h3>
+<p>Design software systems.</p>
+<button class="btn" onclick="navigate('architecture')">Open</button>
+</div>
+
+<div class="card">
+<h3>Security</h3>
+<p>Review defensive security.</p>
+<button class="btn" onclick="navigate('security')">Open</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2B -->
+
+<!-- SECTION 2C: COMMAND DIRECTORY -->
+
+<section class="page" id="commands">
+
+<div class="eyebrow">SYSTEM COMMANDS</div>
+<h1>Command Directory</h1>
+
+<p>Search and launch Apeiron commands.</p>
+
+<input
+class="field"
+id="command-search"
+placeholder="Search commands..."
+oninput="filterCommands()">
+
+<div id="command-list">
+
+<div class="card command-item">
+<h3>/help</h3>
+<p>Display available assistance.</p>
+<button class="btn" onclick="runCommand('/help')">Execute</button>
+<button class="btn" onclick="copyText('/help')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/menu</h3>
+<p>Open the command center.</p>
+<button class="btn" onclick="runCommand('/menu')">Execute</button>
+<button class="btn" onclick="copyText('/menu')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/code</h3>
+<p>Generate software and code.</p>
+<button class="btn" onclick="runCommand('/code')">Execute</button>
+<button class="btn" onclick="copyText('/code')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/debug</h3>
+<p>Analyze programming errors.</p>
+<button class="btn" onclick="runCommand('/debug')">Execute</button>
+<button class="btn" onclick="copyText('/debug')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/explain</h3>
+<p>Explain code and concepts.</p>
+<button class="btn" onclick="runCommand('/explain')">Execute</button>
+<button class="btn" onclick="copyText('/explain')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/optimize</h3>
+<p>Improve software performance.</p>
+<button class="btn" onclick="runCommand('/optimize')">Execute</button>
+<button class="btn" onclick="copyText('/optimize')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/review</h3>
+<p>Review code quality.</p>
+<button class="btn" onclick="runCommand('/review')">Execute</button>
+<button class="btn" onclick="copyText('/review')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/build</h3>
+<p>Build software projects.</p>
+<button class="btn" onclick="runCommand('/build')">Execute</button>
+<button class="btn" onclick="copyText('/build')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/test</h3>
+<p>Create testing strategies.</p>
+<button class="btn" onclick="runCommand('/test')">Execute</button>
+<button class="btn" onclick="copyText('/test')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/architect</h3>
+<p>Design software architecture.</p>
+<button class="btn" onclick="runCommand('/architect')">Execute</button>
+<button class="btn" onclick="copyText('/architect')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/secure</h3>
+<p>Defensive security reviews.</p>
+<button class="btn" onclick="runCommand('/secure')">Execute</button>
+<button class="btn" onclick="copyText('/secure')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/document</h3>
+<p>Generate documentation.</p>
+<button class="btn" onclick="runCommand('/document')">Execute</button>
+<button class="btn" onclick="copyText('/document')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/status</h3>
+<p>Display workspace status.</p>
+<button class="btn" onclick="runCommand('/status')">Execute</button>
+<button class="btn" onclick="copyText('/status')">Copy</button>
+</div>
+
+<div class="card command-item">
+<h3>/reset</h3>
+<p>Reset interface selections.</p>
+<button class="btn" onclick="runCommand('/reset')">Execute</button>
+<button class="btn" onclick="copyText('/reset')">Copy</button>
+</div>
+
+</div>
+</section>
+
+<!-- END SECTION 2C -->
+
+<!-- SECTION 2D: AI ASSISTANT -->
+
+<section class="page" id="chat">
+
+<div class="eyebrow">INTELLIGENCE ENGINE</div>
+<h1>Apeiron AI Assistant</h1>
+
+<p>Welcome, Anonymous. Your development assistant is ready.</p>
+
+<div class="card">
+
+<div class="chat-messages" id="chat-messages">
+
+<div class="message assistant">
+<strong>APEIRON 2.0</strong><br>
+Welcome. I can help with programming,
+debugging, architecture, software development,
+testing, and documentation.
+
+<br><br>
+AI connection: Awaiting backend configuration.
+</div>
+
+</div>
+
+<textarea
+class="field"
+id="chat-input"
+placeholder="Ask Apeiron anything..."
+rows="3"></textarea>
+
+<button class="btn btn-primary"
+onclick="sendMessage()">
+Send Message
+</button>
+
+<button class="btn"
+onclick="clearChat()">
+Clear Conversation
+</button>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+
+<h3>AI Connection</h3>
+
+<p>
+Connect a secure AI backend to enable
+real AI-powered conversations.
+</p>
+
+<button class="btn"
+onclick="navigate('settings')">
+Configure Connection
+</button>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2D -->
+
+<!-- SECTION 2E: CODE LAB -->
+
+<section class="page" id="code">
+
+<div class="eyebrow">DEVELOPMENT ENVIRONMENT</div>
+<h1>Advanced Code Lab</h1>
+
+<div class="card">
+
+<h3>Code Generator</h3>
+
+<label class="field-label">Programming Language</label>
+
+<select class="field" id="code-language">
+<option>Python</option>
+<option>JavaScript</option>
+<option>TypeScript</option>
+<option>HTML</option>
+<option>CSS</option>
+<option>C#</option>
+<option>C++</option>
+<option>Java</option>
+<option>Kotlin</option>
+<option>SQL</option>
+<option>React</option>
+<option>Node.js</option>
+</select>
+
+<label class="field-label">Describe your program</label>
+
+<textarea class="field"
+id="code-request"
+placeholder="What do you want to create?"
+rows="4"></textarea>
+
+<button class="btn btn-primary"
+onclick="generateCode()">
+Generate Code
+</button>
+
+<button class="btn"
+onclick="copyOutput('code-output')">
+Copy Code
+</button>
+
+<h3>Output</h3>
+
+<div class="command-output" id="code-output">
+Generated code will appear here.
+</div>
+
+</div>
+</section>
+
+<!-- END SECTION 2E -->
+
+<!-- SECTION 2F: DEVELOPER TOOLS -->
+
+<section class="page" id="tools">
+
+<div class="eyebrow">DEVELOPMENT UTILITIES</div>
+<h1>Developer Tools</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Code Generator</h3>
+<p>Generate software modules.</p>
+<button class="btn" onclick="navigate('code')">Open</button>
+</div>
+
+<div class="card">
+<h3>Bug Analyzer</h3>
+<p>Investigate programming errors.</p>
+<button class="btn" onclick="navigate('debug')">Open</button>
+</div>
+
+<div class="card">
+<h3>UI Architect</h3>
+<p>Design application interfaces.</p>
+<button class="btn" onclick="navigate('architecture')">Open</button>
+</div>
+
+<div class="card">
+<h3>File Planner</h3>
+<p>Organize project structures.</p>
+<button class="btn" onclick="navigate('projects')">Open</button>
+</div>
+
+<div class="card">
+<h3>Performance Analyzer</h3>
+<p>Identify inefficient code.</p>
+<button class="btn" onclick="navigate('debug')">Open</button>
+</div>
+
+<div class="card">
+<h3>Documentation Writer</h3>
+<p>Create technical documentation.</p>
+<button class="btn" onclick="navigate('docs')">Open</button>
+</div>
+
+</div>
+</section>
+
+<!-- END SECTION 2F -->
