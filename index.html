@@ -2523,8 +2523,13 @@ const ApeironAI = {
         },
 
         body: JSON.stringify({
-          message: message
-        })
+  messages: [
+    {
+      role: "user",
+      content: message
+    }
+  ]
+})
 
       });
 
