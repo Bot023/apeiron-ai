@@ -868,3 +868,1791 @@ Generated code will appear here.
 </section>
 
 <!-- END SECTION 2F -->
+
+<!-- SECTION 2G: DEBUGGING CENTER -->
+
+<section class="page" id="debug">
+
+<div class="eyebrow">ERROR ANALYSIS SYSTEM</div>
+<h1>Debugging Center</h1>
+
+<div class="card">
+<h3>Bug Analyzer</h3>
+
+<label class="field-label">Programming Language</label>
+<select class="field" id="debug-language">
+<option>Python</option>
+<option>JavaScript</option>
+<option>TypeScript</option>
+<option>HTML / CSS</option>
+<option>Java</option>
+<option>C++</option>
+<option>C#</option>
+<option>SQL</option>
+</select>
+
+<label class="field-label">Paste your code or error message</label>
+<textarea class="field" id="debug-input"
+placeholder="Paste your code, error message or stack trace..."
+rows="7"></textarea>
+
+<label class="field-label">What went wrong?</label>
+<textarea class="field" id="debug-description"
+placeholder="Describe the problem..."
+rows="3"></textarea>
+
+<button class="btn btn-primary"
+onclick="analyzeBug()">
+Analyze Problem
+</button>
+
+<button class="btn"
+onclick="copyOutput('debug-output')">
+Copy Analysis
+</button>
+
+<h3>Analysis Results</h3>
+
+<div class="command-output" id="debug-output">
+Your debugging analysis will appear here.
+</div>
+</div>
+
+</section>
+
+<!-- END SECTION 2G -->
+
+<!-- SECTION 2H: ARCHITECTURE ENGINE -->
+
+<section class="page" id="architecture">
+
+<div class="eyebrow">SYSTEM DESIGN ENGINE</div>
+<h1>Architecture Engine</h1>
+
+<div class="card">
+
+<h3>Software Architecture Designer</h3>
+
+<label class="field-label">Project Type</label>
+<select class="field" id="arch-type">
+<option>Website</option>
+<option>Web Application</option>
+<option>Mobile Application</option>
+<option>Desktop Application</option>
+<option>REST API</option>
+<option>Game</option>
+<option>Database System</option>
+<option>Enterprise Application</option>
+</select>
+
+<label class="field-label">Architecture Style</label>
+<select class="field" id="arch-style">
+<option>Recommend for me</option>
+<option>Monolithic</option>
+<option>Microservices</option>
+<option>Event Driven</option>
+<option>Serverless</option>
+<option>Client-Server</option>
+</select>
+
+<label class="field-label">Describe your project</label>
+<textarea class="field" id="arch-request"
+placeholder="Describe the software you want to design..."
+rows="5"></textarea>
+
+<button class="btn btn-primary"
+onclick="designArchitecture()">
+Generate Architecture
+</button>
+
+<button class="btn"
+onclick="copyOutput('arch-output')">
+Copy Architecture
+</button>
+
+<h3>Architecture Results</h3>
+
+<div class="command-output" id="arch-output">
+Your architecture design will appear here.
+</div>
+
+</div>
+</section>
+
+<!-- END SECTION 2H -->
+
+<!-- SECTION 2I: SECURITY CENTER -->
+
+<section class="page" id="security">
+
+<div class="eyebrow">DEFENSIVE SECURITY SYSTEM</div>
+<h1>Security Center</h1>
+
+<div class="card">
+
+<h3>Security Review Engine</h3>
+
+<label class="field-label">Review Type</label>
+<select class="field" id="security-type">
+<option>Secure Code Review</option>
+<option>Authentication Review</option>
+<option>Authorization Review</option>
+<option>API Security</option>
+<option>Database Security</option>
+<option>Input Validation</option>
+<option>Dependency Security</option>
+<option>Privacy Review</option>
+</select>
+
+<label class="field-label">Programming Language</label>
+<select class="field" id="security-language">
+<option>General</option>
+<option>Python</option>
+<option>JavaScript</option>
+<option>TypeScript</option>
+<option>HTML / CSS</option>
+<option>Java</option>
+<option>C#</option>
+<option>SQL</option>
+</select>
+
+<label class="field-label">Paste code or describe your system</label>
+<textarea class="field" id="security-input"
+placeholder="Paste your code or describe the system you want reviewed..."
+rows="7"></textarea>
+
+<button class="btn btn-primary"
+onclick="reviewSecurity()">
+Start Security Review
+</button>
+
+<button class="btn"
+onclick="copyOutput('security-output')">
+Copy Report
+</button>
+
+<h3>Security Report</h3>
+
+<div class="command-output" id="security-output">
+Your security assessment will appear here.
+</div>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+<h3>Security Principles</h3>
+<p>✓ Secure authentication</p>
+<p>✓ Input validation</p>
+<p>✓ Access control</p>
+<p>✓ Secrets protection</p>
+<p>✓ Data privacy</p>
+<p>✓ Defensive testing</p>
+</div>
+
+</section>
+
+<!-- END SECTION 2I -->
+
+<!-- SECTION 2J: TESTING CENTER -->
+
+<section class="page" id="testing">
+
+<div class="eyebrow">QUALITY ASSURANCE ENGINE</div>
+<h1>Testing Center</h1>
+
+<div class="card">
+
+<h3>Test Plan Generator</h3>
+
+<label class="field-label">Testing Type</label>
+<select class="field" id="test-type">
+<option>Unit Testing</option>
+<option>Integration Testing</option>
+<option>End-to-End Testing</option>
+<option>Regression Testing</option>
+<option>API Testing</option>
+<option>UI Testing</option>
+<option>Performance Testing</option>
+<option>Security Testing</option>
+</select>
+
+<label class="field-label">Programming Language</label>
+<select class="field" id="test-language">
+<option>Python</option>
+<option>JavaScript</option>
+<option>TypeScript</option>
+<option>Java</option>
+<option>C#</option>
+<option>C++</option>
+<option>SQL</option>
+</select>
+
+<label class="field-label">Describe what needs testing</label>
+<textarea class="field" id="test-request"
+placeholder="Describe your application, feature or code..."
+rows="5"></textarea>
+
+<button class="btn btn-primary"
+onclick="generateTests()">
+Generate Test Plan
+</button>
+
+<button class="btn"
+onclick="copyOutput('test-output')">
+Copy Results
+</button>
+
+<h3>Testing Results</h3>
+
+<div class="command-output" id="test-output">
+Your testing strategy will appear here.
+</div>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+
+<h3>Quality Assurance Checklist</h3>
+
+<p>✓ Unit test coverage</p>
+<p>✓ Integration verification</p>
+<p>✓ Error handling</p>
+<p>✓ Regression testing</p>
+<p>✓ Performance evaluation</p>
+<p>✓ Security verification</p>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2J -->
+
+<!-- SECTION 2K: PROJECT BUILDER -->
+
+<section class="page" id="projects">
+
+<div class="eyebrow">SOFTWARE DEVELOPMENT ENGINE</div>
+<h1>Project Builder</h1>
+
+<div class="card">
+
+<h3>New Project Configuration</h3>
+
+<label class="field-label">Project Name</label>
+<input class="field" id="project-name"
+placeholder="Enter project name...">
+
+<label class="field-label">Project Type</label>
+<select class="field" id="project-type">
+<option>Website</option>
+<option>Web Application</option>
+<option>Mobile Application</option>
+<option>Desktop Application</option>
+<option>REST API</option>
+<option>Game</option>
+<option>Automation Tool</option>
+<option>Database Application</option>
+</select>
+
+<label class="field-label">Technology</label>
+<select class="field" id="project-tech">
+<option>HTML, CSS and JavaScript</option>
+<option>Python</option>
+<option>React</option>
+<option>Node.js</option>
+<option>Java</option>
+<option>C#</option>
+<option>C++</option>
+<option>Kotlin</option>
+<option>Other</option>
+</select>
+
+<label class="field-label">Project Description</label>
+<textarea class="field" id="project-description"
+placeholder="Describe what you want to build..."
+rows="5"></textarea>
+
+<button class="btn btn-primary"
+onclick="buildProject()">
+Generate Project Plan
+</button>
+
+<button class="btn"
+onclick="copyOutput('project-output')">
+Copy Project Plan
+</button>
+
+<h3>Project Blueprint</h3>
+
+<div class="command-output" id="project-output">
+Your project blueprint will appear here.
+</div>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+
+<h3>Development Workflow</h3>
+
+<p>01 — Requirements</p>
+<p>02 — Technical Planning</p>
+<p>03 — Architecture</p>
+<p>04 — Implementation</p>
+<p>05 — Code Review</p>
+<p>06 — Testing</p>
+<p>07 — Documentation</p>
+<p>08 — Deployment</p>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2K -->
+
+<!-- SECTION 2L: DOCUMENTATION CENTER -->
+
+<section class="page" id="docs">
+
+<div class="eyebrow">TECHNICAL KNOWLEDGE ENGINE</div>
+<h1>Documentation Center</h1>
+
+<div class="card">
+
+<h3>Documentation Generator</h3>
+
+<label class="field-label">Document Type</label>
+<select class="field" id="doc-type">
+<option>README.md</option>
+<option>Installation Guide</option>
+<option>API Documentation</option>
+<option>Architecture Documentation</option>
+<option>Configuration Guide</option>
+<option>Troubleshooting Guide</option>
+<option>Changelog</option>
+<option>Developer Guide</option>
+</select>
+
+<label class="field-label">Project Name</label>
+<input class="field" id="doc-project"
+placeholder="Enter project name...">
+
+<label class="field-label">Project Details</label>
+<textarea class="field" id="doc-details"
+placeholder="Describe your project, features and technologies..."
+rows="6"></textarea>
+
+<button class="btn btn-primary"
+onclick="generateDocs()">
+Generate Documentation
+</button>
+
+<button class="btn"
+onclick="copyOutput('doc-output')">
+Copy Documentation
+</button>
+
+<h3>Generated Document</h3>
+
+<div class="command-output" id="doc-output">
+Your documentation will appear here.
+</div>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+
+<h3>Documentation Standards</h3>
+<p>✓ Clear project descriptions</p>
+<p>✓ Installation instructions</p>
+<p>✓ Configuration details</p>
+<p>✓ Usage examples</p>
+<p>✓ Troubleshooting guidance</p>
+<p>✓ Version information</p>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2L -->
+
+<!-- SECTION 2M: SETTINGS -->
+
+<section class="page" id="settings">
+
+<div class="eyebrow">SYSTEM CONFIGURATION</div>
+<h1>Settings</h1>
+
+<div class="card">
+
+<h3>Interface Preferences</h3>
+
+<label class="field-label">Interface Theme</label>
+<select class="field" id="theme-setting">
+<option value="dark">Dark</option>
+<option value="light">Light</option>
+</select>
+
+<label class="field-label">Assistant Name</label>
+<input class="field" value="Apeiron 2.0" readonly>
+
+<h3>AI Configuration</h3>
+
+<label class="field-label">Connection Mode</label>
+<select class="field" id="ai-mode">
+<option value="hybrid">Hybrid (Online + Offline)</option>
+<option value="offline">Offline Only</option>
+<option value="online">Online AI Only</option>
+</select>
+
+<p>Online AI requires a separately configured secure backend.</p>
+
+<button class="btn btn-primary"
+onclick="saveSettings()">
+Save Settings
+</button>
+
+<button class="btn btn-danger"
+onclick="resetSettings()">
+Reset Settings
+</button>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2M -->
+
+
+<!-- SECTION 2N: ABOUT APEIRON -->
+
+<section class="page" id="about">
+
+<div class="eyebrow">SYSTEM INFORMATION</div>
+<h1>About Apeiron</h1>
+
+<div class="card">
+
+<div class="logo-icon">A</div>
+
+<h2>APEIRON 2.0</h2>
+
+<p>Ultimate Developer Assistant</p>
+
+<p><strong>Version:</strong> 2.0</p>
+
+<p><strong>Role:</strong> Software Engineering Assistant</p>
+
+<p><strong>Primary Focus:</strong></p>
+
+<ul>
+<li>Software Development</li>
+<li>Programming</li>
+<li>Debugging</li>
+<li>Architecture</li>
+<li>Defensive Security</li>
+<li>Testing</li>
+<li>Optimization</li>
+<li>Documentation</li>
+</ul>
+
+<h3>Operating Philosophy</h3>
+
+<p>BUILD. CREATE. ANALYZE. SECURE. OPTIMIZE. EVOLVE.</p>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+
+<h3>Terms of Service</h3>
+
+<p>Use security features only on systems you own or have permission to assess.</p>
+
+<p>Protect credentials and confidential information.</p>
+
+<p>Respect software ownership and licensing.</p>
+
+<p>Generated code must be reviewed and tested before deployment.</p>
+
+<p>Never confuse proposed operations with verified execution.</p>
+
+</div>
+
+</section>
+
+<!-- END SECTION 2N -->
+
+<!-- SECTION 3A: CORE JAVASCRIPT ENGINE -->
+
+<script>
+
+// APEIRON 2.0 CORE ENGINE
+
+function navigate(page) {
+
+  const pages = document.querySelectorAll(".page");
+
+  pages.forEach(section => {
+    section.classList.remove("active");
+  });
+
+  const target = document.getElementById(page);
+
+  if (target) {
+    target.classList.add("active");
+  }
+
+  document.querySelectorAll(".nav-button").forEach(button => {
+    button.classList.remove("active");
+
+    if (button.getAttribute("onclick")?.includes(page)) {
+      button.classList.add("active");
+    }
+  });
+
+  const titles = {
+    dashboard: "Dashboard",
+    commands: "Command Directory",
+    chat: "AI Assistant",
+    code: "Code Lab",
+    tools: "Developer Tools",
+    debug: "Debugging Center",
+    architecture: "Architecture Engine",
+    security: "Security Center",
+    testing: "Testing Center",
+    projects: "Project Builder",
+    docs: "Documentation Center",
+    settings: "Settings",
+    about: "About Apeiron"
+  };
+
+  document.getElementById("page-title").textContent =
+    titles[page] || "Apeiron";
+
+  document.getElementById("sidebar").classList.remove("open");
+
+  window.scrollTo(0, 0);
+}
+
+
+function toggleSidebar() {
+
+  document.getElementById("sidebar")
+    .classList.toggle("open");
+
+}
+
+
+function copyText(text) {
+
+  if (navigator.clipboard && window.isSecureContext) {
+
+    navigator.clipboard.writeText(text)
+      .then(() => alert("Copied successfully!"))
+      .catch(() => alert("Unable to copy automatically."));
+
+  } else {
+
+    const area = document.createElement("textarea");
+
+    area.value = text;
+
+    document.body.appendChild(area);
+    area.select();
+
+    try {
+      document.execCommand("copy");
+      alert("Copied successfully!");
+    } catch (error) {
+      alert("Unable to copy.");
+    }
+
+    area.remove();
+  }
+
+}
+
+
+function copyOutput(id) {
+
+  const element = document.getElementById(id);
+
+  if (element) {
+    copyText(element.innerText);
+  }
+
+}
+
+
+function filterCommands() {
+
+  const search = document.getElementById("command-search")
+    .value.toLowerCase();
+
+  document.querySelectorAll(".command-item").forEach(item => {
+
+    item.style.display =
+      item.innerText.toLowerCase().includes(search)
+        ? "block"
+        : "none";
+
+  });
+
+}
+
+
+function runCommand(command) {
+
+  const workflows = {
+
+    "/help": "Available commands: /help, /menu, /code, /debug, /explain, /optimize, /review, /build, /test, /architect, /secure, /document, /status, /reset",
+
+    "/menu": "Opening Apeiron Dashboard.",
+
+    "/code": "Opening Code Lab.",
+
+    "/debug": "Opening Debugging Center.",
+
+    "/explain": "Enter the code or concept you want explained in the AI Assistant.",
+
+    "/optimize": "Enter your code in the Code Lab for optimization assistance.",
+
+    "/review": "Submit your code for a quality review.",
+
+    "/build": "Opening Project Builder.",
+
+    "/test": "Opening Testing Center.",
+
+    "/architect": "Opening Architecture Engine.",
+
+    "/secure": "Opening Security Center.",
+
+    "/document": "Opening Documentation Center.",
+
+    "/status": "Apeiron 2.0 | Interface loaded | Hybrid mode available | AI backend not yet connected.",
+
+    "/reset": "Resetting interface selections."
+  };
+
+  const destinations = {
+
+    "/menu": "dashboard",
+    "/code": "code",
+    "/debug": "debug",
+    "/build": "projects",
+    "/test": "testing",
+    "/architect": "architecture",
+    "/secure": "security",
+    "/document": "docs"
+
+  };
+
+  if (command === "/reset") {
+
+    navigate("dashboard");
+
+    document.getElementById("command-search").value = "";
+
+    return;
+  }
+
+  if (destinations[command]) {
+    navigate(destinations[command]);
+  }
+
+  alert(workflows[command] || "Unknown command. Type /help.");
+
+}
+
+
+// END SECTION 3A
+
+</script>
+
+<!-- SECTION 3B: OFFLINE AI ENGINE -->
+
+<script>
+
+const ApeironOffline = {
+
+  version: "2.0",
+
+  respond(message) {
+
+    const input = message.toLowerCase().trim();
+
+    if (!input) {
+      return "Please enter a message, Anonymous.";
+    }
+
+    if (/^(hello|hi|hey)\b/.test(input)) {
+      return "Greetings, Anonymous. Apeiron 2.0 is ready. What are we building today?";
+    }
+
+    if (input.includes("help")) {
+      return "I can help with programming, debugging, architecture, testing, security, documentation and project planning.";
+    }
+
+    if (input.includes("status")) {
+      return "APEIRON 2.0\nInterface: Loaded\nOffline engine: Available\nOnline AI: Backend not configured\nMode: Hybrid";
+    }
+
+    if (input.includes("python")) {
+      return "Python assistance:\n\nI can provide Python examples, explain syntax, help structure projects and review code. Describe what you want to create.";
+    }
+
+    if (input.includes("javascript")) {
+      return "JavaScript assistance:\n\nI can provide JavaScript examples, explain functions, troubleshoot errors and help develop browser applications.";
+    }
+
+    if (input.includes("html") || input.includes("website")) {
+      return "Website development assistance:\n\nI can help with HTML structure, CSS styling, JavaScript functionality, responsive layouts and website architecture.";
+    }
+
+    if (input.includes("debug") || input.includes("error")) {
+      return "DEBUGGING MODE\n\nPlease provide the error message, relevant code and what you expected to happen. I can help inspect the problem.";
+    }
+
+    if (input.includes("security")) {
+      return "SECURITY MODE\n\nI can help review secure coding, authentication, permissions, input validation and defensive security practices.";
+    }
+
+    if (input.includes("project") || input.includes("build")) {
+      return "PROJECT BUILDER\n\nLet's define your project requirements, choose technologies, design the architecture and plan implementation.";
+    }
+
+    if (input.includes("architecture")) {
+      return "ARCHITECTURE ENGINE\n\nI can help design application structures, APIs, databases, frontend systems and backend services.";
+    }
+
+    if (input.includes("test")) {
+      return "TESTING ENGINE\n\nI can help create unit tests, integration tests, regression tests and testing strategies.";
+    }
+
+    if (input.includes("optimize")) {
+      return "OPTIMIZATION ENGINE\n\nProvide your code or describe the performance issue. We can examine algorithms, resource usage and efficiency.";
+    }
+
+    if (input.includes("document")) {
+      return "DOCUMENTATION ENGINE\n\nI can help prepare README files, installation instructions, API documentation and developer guides.";
+    }
+
+    return "APEIRON 2.0 — OFFLINE MODE\n\nI received your message:\n\"" +
+      message +
+      "\"\n\nMy built-in offline knowledge is limited. Connect a secure AI backend for advanced conversational intelligence.";
+  }
+
+};
+
+
+// END SECTION 3B
+
+</script>
+
+<!-- SECTION 3C: CHAT INTERFACE ENGINE -->
+
+<script>
+
+function addChatMessage(message, sender) {
+
+  const container = document.getElementById("chat-messages");
+
+  const bubble = document.createElement("div");
+
+  bubble.className = "message " + sender;
+
+  const heading = document.createElement("strong");
+
+  heading.textContent =
+    sender === "user" ? "ANONYMOUS" : "APEIRON 2.0";
+
+  const content = document.createElement("div");
+
+  content.style.whiteSpace = "pre-wrap";
+  content.textContent = message;
+
+  bubble.appendChild(heading);
+  bubble.appendChild(document.createElement("br"));
+  bubble.appendChild(content);
+
+  container.appendChild(bubble);
+
+  container.scrollTop = container.scrollHeight;
+
+}
+
+
+function sendMessage() {
+
+  const input = document.getElementById("chat-input");
+
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  addChatMessage(message, "user");
+
+  input.value = "";
+
+  const response = ApeironOffline.respond(message);
+
+  addChatMessage(response, "assistant");
+
+}
+
+
+function clearChat() {
+
+  const container = document.getElementById("chat-messages");
+
+  container.replaceChildren();
+
+  addChatMessage(
+    "Conversation cleared. Welcome back, Anonymous. How can I help?",
+    "assistant"
+  );
+
+}
+
+
+// ENTER KEY SUPPORT
+
+document.getElementById("chat-input")
+  .addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter" && !event.shiftKey) {
+
+      event.preventDefault();
+
+      sendMessage();
+
+    }
+
+  });
+
+
+// END SECTION 3C
+
+</script>
+
+<!-- SECTION 3D: CODE GENERATOR ENGINE -->
+
+<script>
+
+function generateCode() {
+
+  const language = document.getElementById("code-language").value;
+  const request = document.getElementById("code-request").value.trim();
+  const output = document.getElementById("code-output");
+
+  if (!request) {
+    output.textContent = "Please describe what you want to create.";
+    return;
+  }
+
+  const templates = {
+
+    "Python": `# Apeiron 2.0 - Python
+# Project: ${request}
+
+def main():
+    print("Hello from Apeiron!")
+
+if __name__ == "__main__":
+    main()
+`,
+
+    "JavaScript": `// Apeiron 2.0 - JavaScript
+// Project: ${request}
+
+function main() {
+    console.log("Hello from Apeiron!");
+}
+
+main();
+`,
+
+    "TypeScript": `// Apeiron 2.0 - TypeScript
+// Project: ${request}
+
+function main(): void {
+    console.log("Hello from Apeiron!");
+}
+
+main();
+`,
+
+    "HTML": `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apeiron Project</title>
+</head>
+<body>
+<h1>${escapeHTML(request)}</h1>
+<p>Created with Apeiron 2.0.</p>
+</body>
+</html>
+`,
+
+    "CSS": `/* Apeiron 2.0 - CSS */
+/* Project: ${request} */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #08090d;
+    color: white;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+`,
+
+    "Java": `// Apeiron 2.0 - Java
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Hello from Apeiron!");
+    }
+
+}
+`,
+
+    "C#": `// Apeiron 2.0 - C#
+
+using System;
+
+class Program {
+
+    static void Main() {
+        Console.WriteLine("Hello from Apeiron!");
+    }
+
+}
+`,
+
+    "C++": `// Apeiron 2.0 - C++
+
+#include <iostream>
+
+int main() {
+    std::cout << "Hello from Apeiron!" << std::endl;
+    return 0;
+}
+`,
+
+    "Kotlin": `// Apeiron 2.0 - Kotlin
+
+fun main() {
+    println("Hello from Apeiron!")
+}
+`,
+
+    "SQL": `-- Apeiron 2.0 - SQL
+
+CREATE TABLE projects (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+SELECT * FROM projects;
+`,
+
+    "React": `// Apeiron 2.0 - React
+
+import React from "react";
+
+export default function App() {
+    return (
+        <main>
+            <h1>Hello from Apeiron!</h1>
+            <p>${escapeHTML(request)}</p>
+        </main>
+    );
+}
+`,
+
+    "Node.js": `// Apeiron 2.0 - Node.js
+
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {
+        "Content-Type": "text/plain"
+    });
+
+    res.end("Hello from Apeiron!");
+});
+
+server.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
+`
+
+  };
+
+  output.textContent =
+    templates[language] ||
+    "No template available for this language.";
+
+}
+
+
+function escapeHTML(value) {
+
+  return value.replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[character]);
+
+}
+
+
+// END SECTION 3D
+
+</script>
+
+<!-- SECTION 3E: DEVELOPMENT ANALYSIS ENGINES -->
+
+<script>
+
+// DEBUGGING ENGINE
+
+function analyzeBug() {
+
+  const language = document.getElementById("debug-language").value;
+  const code = document.getElementById("debug-input").value.trim();
+  const description = document.getElementById("debug-description").value.trim();
+
+  const output = document.getElementById("debug-output");
+
+  if (!code && !description) {
+    output.textContent = "Please provide code or describe the error.";
+    return;
+  }
+
+  output.textContent =
+`APEIRON DEBUGGING REPORT
+
+Language: ${language}
+
+Problem:
+${description || "No description provided."}
+
+Code / Error:
+${code || "No code supplied."}
+
+Recommended investigation:
+1. Identify the exact error location.
+2. Check variable names and data types.
+3. Inspect dependencies.
+4. Check input validation.
+5. Review error handling.
+6. Create a regression test.
+
+This is a preliminary offline analysis.
+No code has been executed.`;
+
+}
+
+
+// ARCHITECTURE ENGINE
+
+function designArchitecture() {
+
+  const type = document.getElementById("arch-type").value;
+  const style = document.getElementById("arch-style").value;
+  const request = document.getElementById("arch-request").value.trim();
+
+  const output = document.getElementById("arch-output");
+
+  if (!request) {
+    output.textContent = "Please describe your project.";
+    return;
+  }
+
+  output.textContent =
+`APEIRON ARCHITECTURE BLUEPRINT
+
+Project Type: ${type}
+
+Architecture Style: ${style}
+
+Project Requirements:
+${request}
+
+PROPOSED COMPONENTS
+
+1. Presentation Layer
+   User interface and client interactions.
+
+2. Application Layer
+   Business logic and application services.
+
+3. Data Layer
+   Database and data management.
+
+4. Security Layer
+   Authentication, authorization and validation.
+
+5. Infrastructure Layer
+   Hosting, deployment and monitoring.
+
+DEVELOPMENT PLAN
+
+1. Define requirements.
+2. Design components.
+3. Define interfaces and APIs.
+4. Plan database structure.
+5. Implement components.
+6. Test integration.
+7. Document deployment.
+
+Architecture requires further refinement
+against actual project requirements.`;
+
+}
+
+
+// DEFENSIVE SECURITY ENGINE
+
+function reviewSecurity() {
+
+  const type = document.getElementById("security-type").value;
+  const language = document.getElementById("security-language").value;
+  const input = document.getElementById("security-input").value.trim();
+
+  const output = document.getElementById("security-output");
+
+  if (!input) {
+    output.textContent = "Please provide code or system details.";
+    return;
+  }
+
+  const checks = [];
+
+  if (/password|secret|api[_-]?key/i.test(input)) {
+    checks.push("Inspect possible hardcoded credentials.");
+  }
+
+  if (/innerHTML|document\.write/i.test(input)) {
+    checks.push("Review potentially unsafe HTML insertion.");
+  }
+
+  if (/eval\s*\(/i.test(input)) {
+    checks.push("Review dynamic code execution.");
+  }
+
+  if (/SELECT.*\+|SELECT.*\$\{/i.test(input)) {
+    checks.push("Review possible SQL injection risks.");
+  }
+
+  if (checks.length === 0) {
+    checks.push("No basic pattern matches found. This does not establish that the code is secure.");
+  }
+
+  output.textContent =
+`APEIRON SECURITY REVIEW
+
+Review Type: ${type}
+Language: ${language}
+
+FINDINGS TO INVESTIGATE
+
+${checks.map((item, index) => (index + 1) + ". " + item).join("\n")}
+
+GENERAL RECOMMENDATIONS
+
+1. Validate untrusted input.
+2. Use parameterized database queries.
+3. Protect credentials.
+4. Enforce authorization.
+5. Encode untrusted output.
+6. Review dependencies.
+7. Apply secure error handling.
+
+This is a preliminary pattern-based review,
+not a complete security audit.
+
+No external systems were tested.`;
+
+}
+
+
+// END SECTION 3E
+
+</script>
+
+<!-- SECTION 3F: PROJECT AND DOCUMENTATION ENGINES -->
+
+<script>
+
+// TESTING ENGINE
+
+function generateTests() {
+
+  const type = document.getElementById("test-type").value;
+  const language = document.getElementById("test-language").value;
+  const request = document.getElementById("test-request").value.trim();
+
+  const output = document.getElementById("test-output");
+
+  if (!request) {
+    output.textContent = "Describe what needs testing.";
+    return;
+  }
+
+  output.textContent =
+`APEIRON TESTING PLAN
+
+Testing Type: ${type}
+Language: ${language}
+
+Target:
+${request}
+
+TEST CASES
+
+1. Normal input
+2. Empty input
+3. Invalid input
+4. Boundary conditions
+5. Unexpected errors
+6. Recovery behavior
+
+QUALITY CHECKLIST
+
+- Verify expected results.
+- Test failure conditions.
+- Check edge cases.
+- Review performance.
+- Run regression tests.
+- Document failures.
+
+Suggested tools:
+${language === "Python" ? "pytest" :
+language === "JavaScript" || language === "TypeScript" ?
+"Vitest or Jest" :
+"Choose a testing framework appropriate to your project."}
+
+These tests are proposed, not executed.`;
+
+}
+
+
+// PROJECT BUILDER
+
+function buildProject() {
+
+  const name = document.getElementById("project-name").value.trim();
+  const type = document.getElementById("project-type").value;
+  const tech = document.getElementById("project-tech").value;
+  const description = document.getElementById("project-description").value.trim();
+
+  const output = document.getElementById("project-output");
+
+  if (!name || !description) {
+    output.textContent = "Please enter a project name and description.";
+    return;
+  }
+
+  output.textContent =
+`APEIRON PROJECT BLUEPRINT
+
+Project: ${name}
+Type: ${type}
+Technology: ${tech}
+
+DESCRIPTION
+
+${description}
+
+PROPOSED STRUCTURE
+
+${name}/
+├── index.html
+├── README.md
+├── src/
+├── assets/
+├── tests/
+└── docs/
+
+DEVELOPMENT PHASES
+
+1. Requirements gathering
+2. Technology selection
+3. Architecture design
+4. Implementation
+5. Code review
+6. Testing
+7. Security review
+8. Documentation
+9. Deployment preparation
+
+NEXT ACTION
+
+Begin implementation with the core application.
+
+This is a proposed project structure.`;
+
+}
+
+
+// DOCUMENTATION ENGINE
+
+function generateDocs() {
+
+  const type = document.getElementById("doc-type").value;
+  const project = document.getElementById("doc-project").value.trim();
+  const details = document.getElementById("doc-details").value.trim();
+
+  const output = document.getElementById("doc-output");
+
+  if (!project || !details) {
+    output.textContent = "Enter a project name and project details.";
+    return;
+  }
+
+  output.textContent =
+`# ${project}
+
+## ${type}
+
+### Overview
+
+${details}
+
+### Features
+
+- Application functionality
+- User interface
+- Core application logic
+- Error handling
+
+### Installation
+
+1. Download or clone the project.
+2. Open the project directory.
+3. Follow the project-specific setup instructions.
+
+### Configuration
+
+Configure the application according to its
+actual dependencies and environment.
+
+### Usage
+
+Follow the application's usage instructions.
+
+### Testing
+
+Run the project's available tests.
+
+### Security
+
+Protect credentials and validate untrusted input.
+
+### Maintenance
+
+Review dependencies and maintain documentation.
+
+---
+Generated with Apeiron 2.0.
+
+Note: This is a starter document. Verify details
+against the actual implementation.`;
+
+}
+
+
+// END SECTION 3F
+
+</script>
+
+<!-- SECTION 3G: SETTINGS ENGINE -->
+
+<script>
+
+// SAVE SETTINGS
+
+function saveSettings() {
+
+  const mode = document.getElementById("ai-mode").value;
+  const theme = document.getElementById("theme-setting").value;
+
+  const settings = {
+    mode: mode,
+    theme: theme
+  };
+
+  try {
+    localStorage.setItem(
+      "apeiron-settings",
+      JSON.stringify(settings)
+    );
+
+    applySettings(settings);
+
+    alert("Apeiron settings saved.");
+
+  } catch (error) {
+
+    alert("Settings could not be saved in this browser.");
+
+  }
+
+}
+
+
+// APPLY SETTINGS
+
+function applySettings(settings) {
+
+  if (settings.theme === "light") {
+
+    document.documentElement.style.setProperty(
+      "--background", "#f1f3f8"
+    );
+
+    document.documentElement.style.setProperty(
+      "--panel", "#ffffff"
+    );
+
+    document.documentElement.style.setProperty(
+      "--panel2", "#e9edf5"
+    );
+
+    document.documentElement.style.setProperty(
+      "--border", "#cbd1df"
+    );
+
+    document.documentElement.style.setProperty(
+      "--text", "#171923"
+    );
+
+    document.documentElement.style.setProperty(
+      "--muted", "#626b7c"
+    );
+
+  } else {
+
+    document.documentElement.style.setProperty(
+      "--background", "#08090d"
+    );
+
+    document.documentElement.style.setProperty(
+      "--panel", "#11141c"
+    );
+
+    document.documentElement.style.setProperty(
+      "--panel2", "#171b25"
+    );
+
+    document.documentElement.style.setProperty(
+      "--border", "#292e3a"
+    );
+
+    document.documentElement.style.setProperty(
+      "--text", "#f4f5f8"
+    );
+
+    document.documentElement.style.setProperty(
+      "--muted", "#929baa"
+    );
+
+  }
+
+}
+
+
+// RESET SETTINGS
+
+function resetSettings() {
+
+  if (!confirm("Reset Apeiron settings to defaults?")) {
+    return;
+  }
+
+  try {
+
+    localStorage.removeItem("apeiron-settings");
+
+  } catch (error) {
+
+    alert("Browser storage is unavailable.");
+
+  }
+
+  document.getElementById("ai-mode").value = "hybrid";
+
+  document.getElementById("theme-setting").value = "dark";
+
+  applySettings({
+    mode: "hybrid",
+    theme: "dark"
+  });
+
+  alert("Settings reset.");
+
+}
+
+
+// LOAD SETTINGS
+
+function loadSettings() {
+
+  try {
+
+    const saved = localStorage.getItem("apeiron-settings");
+
+    if (!saved) return;
+
+    const settings = JSON.parse(saved);
+
+    if (!["hybrid", "offline", "online"].includes(settings.mode)) {
+      return;
+    }
+
+    if (!["dark", "light"].includes(settings.theme)) {
+      return;
+    }
+
+    document.getElementById("ai-mode").value = settings.mode;
+
+    document.getElementById("theme-setting").value = settings.theme;
+
+    applySettings(settings);
+
+  } catch (error) {
+
+    console.warn("Unable to load Apeiron settings.");
+
+  }
+
+}
+
+
+// INITIALIZE SETTINGS
+
+document.addEventListener("DOMContentLoaded", loadSettings);
+
+
+// END SECTION 3G
+
+</script>
+
+<!-- SECTION 4A: HYBRID AI CONNECTION ENGINE -->
+
+<script>
+
+// APEIRON HYBRID AI ENGINE
+
+const ApeironAI = {
+
+  endpoint: "",
+
+  connected: false,
+
+  configure(url) {
+
+    try {
+      const parsed = new URL(url);
+
+      if (parsed.protocol !== "https:" &&
+          parsed.hostname !== "localhost") {
+        throw new Error("HTTPS is required.");
+      }
+
+      this.endpoint = parsed.href;
+      this.connected = false;
+
+      return true;
+
+    } catch (error) {
+      return false;
+    }
+
+  },
+
+  async connect() {
+
+    if (!this.endpoint) return false;
+
+    try {
+
+      const response = await fetch(this.endpoint, {
+        method: "OPTIONS"
+      });
+
+      this.connected = response.ok;
+
+      return this.connected;
+
+    } catch (error) {
+
+      this.connected = false;
+      return false;
+
+    }
+
+  },
+
+  async ask(message) {
+
+    if (!this.endpoint) {
+      return ApeironOffline.respond(message);
+    }
+
+    try {
+
+      const response = await fetch(this.endpoint, {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          message: message
+        })
+
+      });
+
+      if (!response.ok) {
+        throw new Error("AI server unavailable.");
+      }
+
+      const data = await response.json();
+
+      if (typeof data.reply !== "string") {
+        throw new Error("Invalid server response.");
+      }
+
+      this.connected = true;
+
+      return data.reply;
+
+    } catch (error) {
+
+      this.connected = false;
+
+      return "ONLINE AI UNAVAILABLE\n\nSwitching to offline mode.\n\n" +
+        ApeironOffline.respond(message);
+
+    }
+
+  }
+
+};
+
+
+// ADD CONNECTION SETTINGS TO CHAT
+
+(function addAISettings() {
+
+  const chat = document.getElementById("chat");
+
+  if (!chat || document.getElementById("ai-endpoint")) return;
+
+  const panel = document.createElement("div");
+
+  panel.className = "card";
+  panel.style.marginTop = "15px";
+
+  panel.innerHTML = `
+    <h3>Hybrid AI Connection</h3>
+
+    <label class="field-label">
+      Secure Backend URL
+    </label>
+
+    <input
+      class="field"
+      id="ai-endpoint"
+      type="url"
+      placeholder="https://your-server.example/api/chat"
+    >
+
+    <button class="btn btn-primary" id="ai-connect">
+      Configure Connection
+    </button>
+
+    <p id="ai-connection-status">
+      Status: Offline mode available.
+    </p>
+  `;
+
+  chat.appendChild(panel);
+
+  document.getElementById("ai-connect")
+    .addEventListener("click", async function() {
+
+      const url = document.getElementById("ai-endpoint").value.trim();
+
+      const status = document.getElementById("ai-connection-status");
+
+      if (!ApeironAI.configure(url)) {
+
+        status.textContent = "Invalid URL. Use HTTPS or localhost.";
+
+        return;
+      }
+
+      status.textContent = "Checking backend...";
+
+      const connected = await ApeironAI.connect();
+
+      status.textContent = connected
+        ? "Backend reachable. Ready to test AI requests."
+        : "Backend unavailable. Offline mode remains active.";
+
+    });
+
+})();
+
+
+// HYBRID CHAT
+
+async function sendMessage() {
+
+  const input = document.getElementById("chat-input");
+
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  addChatMessage(message, "user");
+
+  input.value = "";
+
+  const container = document.getElementById("chat-messages");
+
+  const loading = document.createElement("div");
+
+  loading.className = "message assistant";
+  loading.textContent = "Apeiron is thinking...";
+
+  container.appendChild(loading);
+
+  const response = await ApeironAI.ask(message);
+
+  loading.textContent = "APEIRON 2.0\n" + response;
+
+  container.scrollTop = container.scrollHeight;
+
+}
+
+
+// END SECTION 4A
+
+</script>
